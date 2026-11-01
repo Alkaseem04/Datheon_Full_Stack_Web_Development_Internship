@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>FocusFlow | Task Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brandmark" aria-hidden="true">✓</span>
+        <span>FocusFlow<small>YOUR PRODUCTIVITY SPACE</small></span>
+      </div>
+      <div class="side-label">WORKSPACE</div>
+      <nav aria-label="Task filters">
+        <button class="nav active" data-filter="all" type="button">◫ &nbsp; All tasks <span id="allCount">0</span></button>
+        <button class="nav" data-filter="active" type="button">◷ &nbsp; Active <span id="activeCount">0</span></button>
+        <button class="nav" data-filter="completed" type="button">✓ &nbsp; Completed <span id="completedCount">0</span></button>
+      </nav>
+      <div class="side-label">CATEGORIES</div>
+      <div class="category-legend">
+        <span>🟣 Work</span>
+        <span>🔵 Study</span>
+        <span>🟠 Personal</span>
+      </div>
+      <div class="sidebar-bottom">
+        Datheon Internship · Task 2<br>
+        <small>Stored locally in this browser</small>
+      </div>
+    </aside>
+
+    <main>
+      <header>
+        <div>
+          <div class="eyebrow">YOUR WORKSPACE / OVERVIEW</div>
+          <h1>Make today count<span class="dot">.</span></h1>
+          <p class="sub">Organize your priorities, stay focused, and track your wins.</p>
+        </div>
+        <button id="newTask" class="primary" type="button">＋ New task</button>
+      </header>
+
+      <section class="stats" aria-label="Task statistics">
+        <div class="stat">
+          <span>Total tasks</span>
+          <strong id="totalStat">0</strong>
+          <small>Everything on your plate</small>
+        </div>
+        <div class="stat">
+          <span>In progress</span>
+          <strong id="activeStat">0</strong>
+          <small>Keep the momentum</small>
+        </div>
+        <div class="stat">
+          <span>Completed</span>
+          <strong id="doneStat">0</strong>
+          <small>Progress worth celebrating</small>
+        </div>
+        <div class="stat">
+          <span>Completion rate</span>
+          <strong id="rateStat">0%</strong>
+          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Task completion rate">
+            <div id="progressBar"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <h2>Your tasks <span id="headingCount" class="count">0</span></h2>
+            <p>Everything you need to get done, all in one place.</p>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <label class="search" for="search">
+            <span aria-hidden="true">⌕</span>
+            <input id="search" type="search" placeholder="Search tasks..." aria-label="Search tasks" autocomplete="off">
+          </label>
+          <select id="categoryFilter" aria-label="Filter by category">
+            <option value="all">All categories</option>
+            <option value="Work">Work</option>
+            <option value="Study">Study</option>
+            <option value="Personal">Personal</option>
+          </select>
+          <select id="sort" aria-label="Sort tasks">
+            <option value="newest">Newest first</option>
+            <option value="due">Due date</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Task status filters">
+          <button class="tab active" data-filter="all" role="tab" aria-selected="true" type="button">All tasks</button>
+          <button class="tab" data-filter="active" role="tab" aria-selected="false" type="button">Active</button>
+          <button class="tab" data-filter="completed" role="tab" aria-selected="false" type="button">Completed</button>
+        </div>
+
+        <div id="taskList" class="task-list" aria-live="polite"></div>
+      </section>
+
+      <footer>FocusFlow · Built for Datheon Full Stack Web Development Internship</footer>
+    </main>
+  </div>
+
+  <dialog id="taskDialog" aria-labelledby="dialogTitle">
+    <form id="taskForm" method="dialog">
+      <div class="dialog-head">
+        <div>
+          <div class="eyebrow">STAY ORGANIZED</div>
+          <h2 id="dialogTitle">Create a task</h2>
+        </div>
+        <button type="button" class="icon-btn" id="closeDialog" aria-label="Close dialog">×</button>
+      </div>
+
+      <div class="form-field">
+        <label for="taskTitle">Task title <span>*</span></label>
+        <input id="taskTitle" maxlength="120" required placeholder="What needs to be done?">
+      </div>
+
+      <div class="form-field">
+        <label for="taskDescription">Description</label>
+        <textarea id="taskDescription" maxlength="500" rows="3" placeholder="Add a little context (optional)"></textarea>
+      </div>
+
+      <div class="two">
+        <div class="form-field">
+          <label for="taskCategory">Category</label>
+          <select id="taskCategory">
+            <option value="Work">Work</option>
+            <option value="Study">Study</option>
+            <option value="Personal">Personal</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="taskDue">Due date</label>
+          <input id="taskDue" type="date">
+        </div>
+      </div>
+
+      <div class="dialog-actions">
+        <button type="button" class="secondary" id="cancelDialog">Cancel</button>
+        <button type="submit" class="primary" id="saveButton">Create task</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.git-backup/
+**/.env
+**/.env.*
+**/.vercel/
+**/node_modules/
+**/dist/
+**/coverage/
+
+**/.git-backup/
+**/.env*
+**/.vercel/
+**/node_modules/
+**/dist/
+**/coverage/

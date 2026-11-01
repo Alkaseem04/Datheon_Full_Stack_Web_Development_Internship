@@ -1,0 +1,19 @@
+{
+  "name": "weatherpulse",
+  "version": "1.0.0",
+  "description": "WeatherPulse — Live Weather Telemetry Dashboard (Datheon Full Stack Internship Task 3)",
+  "main": "api/weather.js",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  },
+  "keywords": [
+    "weather",
+    "dashboard",
+    "telemetry",
+    "vanilla-js",
+    "weatherapi",
+    "vercel-serverless"
+  ],
+  "author": "Datheon Web Development Intern",
+  "license": "MIT"
+}

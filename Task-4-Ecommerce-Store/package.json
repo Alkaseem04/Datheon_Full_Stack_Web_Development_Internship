@@ -1,0 +1,21 @@
+{
+  "name": "shopsphere-ecommerce-store",
+  "version": "1.0.0",
+  "description": "Premium e-commerce storefront for Datheon Full Stack Web Development Internship Task 4",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "ecommerce",
+    "javascript",
+    "vanilla-js",
+    "shopping-cart",
+    "fakestoreapi",
+    "datheon"
+  ],
+  "author": "Datheon Intern",
+  "license": "MIT"
+}
+
